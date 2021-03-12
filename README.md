@@ -1,5 +1,5 @@
 ## Google-IT-Automation-with-Python
-###Week1
+### Week1
 Use the Python Imaging Library to do the following to a batch of images:
 
   - Open an image
