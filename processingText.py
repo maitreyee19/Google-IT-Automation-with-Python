@@ -1,16 +1,7 @@
+
 import os
 from os.path import isfile, join
 import requests
-
-
-# def conver2Rgb(im):
-#     im = im.rotate(270)
-#     size = (128, 128)
-#     im = im.resize(size)
-#     #im = im.convert('RGB')
-#     return im
-
-
 def main():
     # path of the folder containing feedback
     inPath = "/home/bhabani/Work/googleITAutomation/week2"
@@ -24,7 +15,8 @@ def main():
                 dictForFeedback["name"] = Lines[1].rstrip()
                 dictForFeedback["date"] = Lines[2].rstrip()
                 dictForFeedback["feedback"] = Lines[3].rstrip()
-                response = requests.post("https://example.com/path/to/api", data=dictForFeedback)
+                data ={"title": "Great Customer Service", "date": "2017-12-21", "name": "John", "feedback": "The customer service here is very good. They helped me find a 2017 Camry with good condition in reasonable price. Campared to other dealers, they provided the lowest price. Definttely recommend!"}
+                response = requests.post("http://http://34.123.139.34/feedback", data=data)
                 if not response.ok:
                     raise Exception("GET failed with status code {}".format(response.status_code))
         except Exception as e:
@@ -35,3 +27,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
