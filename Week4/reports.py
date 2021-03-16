@@ -6,13 +6,13 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 
 
-def generate(filename, title, additional_info):
+def generate_report(filename, title, additional_info):
     styles = getSampleStyleSheet()
     report = SimpleDocTemplate(filename)
     report_title = Paragraph(title, styles["h1"])
     report_info = ""
     report_table =Table(additional_info,hAlign='LEFT')
-    print(report_table)
+    #print(report_table)
 
     #for data in additional_info:
      #   print("data:",data)
